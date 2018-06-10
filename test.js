@@ -1,11 +1,14 @@
 'use strict';
 
-require('./algebraics/functor')
-  .test();
+const FunctorModule = require('./algebraics/functor');
+FunctorModule.test(FunctorModule.type);
 
-require('./algebraics/apply')
-  .test();
+// require('./algebraics/functor/functor')
+  // .test();
 
-require('./algebraics/applicative')
-  .test();
+// require('./algebraics/apply')
+  // .test();
+
+// require('./algebraics/applicative')
+  // .test();
 

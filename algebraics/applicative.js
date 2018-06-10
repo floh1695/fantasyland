@@ -6,12 +6,17 @@ const assert = require('../assert');
 const Apply = require('./apply');
 
 const Applicative = S(Apply)
+  .init(function() {
+    this._type = Applicative;
+  })
   .statics({
     of(value) {
       // of :: Applicative f => a -> f a
       return Applicative(value);
     },
-  })
+  });
+
+const ApplicativeTest = S()
   .statics({
     test() {
       console.log('  Applicative Tests');
@@ -55,5 +60,6 @@ const Applicative = S(Apply)
     },
   });
 
-module.exports = Applicative;
+module.exports = Applicative
+  .compose(ApplicativeTest);
 

@@ -6,12 +6,17 @@ const assert = require('../assert');
 const Functor = require('./functor');
 
 const Apply = S(Functor)
+  .init(function() {
+    this._type = Apply;
+  })
   .methods({
     ap(f) {
       // ap :: Apply f => f a ~> f (a -> b) -> f b
-      return Apply(f._value(this._value));
+      return this._type(f._value(this._value));
     },
-  })
+  });
+
+const ApplyTest = S()
   .statics({
     test() {
       console.log('  Apply Tests');
@@ -33,5 +38,6 @@ const Apply = S(Functor)
     }, 
  });
 
-module.exports = Apply;
+module.exports = Apply
+  .compose(ApplyTest);
 
