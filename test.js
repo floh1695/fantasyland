@@ -9,6 +9,9 @@ const ApplyModule = require('./algebraics/apply');
 FunctorModule.test(ApplyModule.type);
 ApplyModule.test(ApplyModule.type);
 
-// require('./algebraics/applicative')
-  // .test();
+console.log('----Applicative----');
+const ApplicativeModule = require('./algebraics/applicative');
+FunctorModule.test(ApplicativeModule.type);
+ApplyModule.test(ApplicativeModule.type);
+ApplicativeModule.test(ApplicativeModule.type);
 
