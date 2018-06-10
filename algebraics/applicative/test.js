@@ -18,29 +18,29 @@ const applicativeTest = function(applicative) {
     (v
       .ap(applicative
           .of(i))
-      ._value)
+      .value())
     (v
-      ._value);
+      .value());
 
   assert('Applicative homomorphism')
     (applicative
       .of(x)
       .ap(applicative
         .of(f))
-      ._value)
+      .value())
     (applicative
       .of(f(x))
-      ._value);
+      .value());
 
   assert('Applicative interchange')
     (applicative
       .of(y)
       .ap(u)
-      ._value)
+      .value())
     (u
       .ap(applicative
         .of(f => f(y)))
-      ._value);
+      .value());
 };
 
 module.exports = applicativeTest;

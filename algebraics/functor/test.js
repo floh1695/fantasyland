@@ -13,17 +13,17 @@ const functorTest = function(functor) {
       assert('Functor identity')
         (u
           .map(i)
-          ._value)
-        (u._value);
+          .value())
+        (u.value());
 
       assert('Functor composition')
         (u
           .map(g)
           .map(f)
-          ._value)
+          .value())
         (u
           .map(x => f(g(x)))
-          ._value);
+          .value());
 };
 
 module.exports = functorTest;

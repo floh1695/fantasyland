@@ -14,11 +14,11 @@ const applyTest = function(apply) {
       .ap(u
         .ap(a
           .map(f => g => x => f(g(x)))))
-      ._value)
+      .value())
     (v
       .ap(u)
       .ap(a)
-      ._value);
+      .value());
 };
 
 module.exports = applyTest;
