@@ -8,7 +8,7 @@ const ApplyCore = S(FunctorCore)
   .methods({
     _ap(type, f) {
       // ap :: Apply f => f a ~> f (a -> b) -> f b
-      return type(f._value(this._value));
+      return this._map(type, f._value);
     },
   });
 
