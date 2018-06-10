@@ -1,6 +1,7 @@
 'use strict';
 
 const R = require('ramda');
+const S = require('stampit');
 
 const assert = R.curry(function (testName, shouldBe, isThis) {
   if (isThis === shouldBe) {
@@ -11,15 +12,19 @@ const assert = R.curry(function (testName, shouldBe, isThis) {
   }
 });
 
-const Functor = function (value) {
-  return {
-    _value: value,
-    /* map :: Functor f => f a ~> (a -> b) -> f b */ 
-    map: function (func) {
-      return Functor(func(this._value));
+const Functor = S({
+  props: {
+    _value: null,
+  },
+  init(value) {
+    this._value = value;
+  },
+  methods: {
+    map(f) {
+      return Functor(f(this._value));
     },
-  };
-};
+  },
+});
 
 assert('Functor identity')
   (Functor(5)
