@@ -6,3 +6,6 @@ require('./algebraics/functor')
 require('./algebraics/apply')
   .test();
 
+require('./algebraics/applicative')
+  .test();
+
