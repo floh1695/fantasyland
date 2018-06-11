@@ -22,3 +22,10 @@ FunctorModule.test(ApplicativeModule.type);
 ApplyModule.test(ApplicativeModule.type);
 ApplicativeModule.test(ApplicativeModule.type);
 
+console.log('----Chain----');
+const ChainModule = require('./algebraics/chain');
+ContextModule.test(ChainModule.type);
+FunctorModule.test(ChainModule.type);
+ApplyModule.test(ChainModule.type);
+ChainModule.test(ChainModule.type);
+
