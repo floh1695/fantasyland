@@ -3,6 +3,9 @@
 const assert = require('../../assert');
 
 const applicativeTest = function(applicative) {
+  require('../apply')
+    .test(applicative);
+
   console.log('  Applicative Tests');
 
   const v = applicative(2);

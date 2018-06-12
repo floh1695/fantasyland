@@ -15,7 +15,7 @@ const Applicative = S(ApplicativeCore)
   })
   .statics({
     of(value) {
-      return ApplicativeCore._of(Applicative, value);
+      return Applicative._of(Applicative, value);
     },
   });
 

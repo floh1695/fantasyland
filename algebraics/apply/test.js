@@ -3,6 +3,9 @@
 const assert = require('../../assert');
 
 const applyTest = function(apply) {
+  require('../functor')
+    .test(apply);
+
   console.log('  Apply Tests');
 
   const v = apply(2);

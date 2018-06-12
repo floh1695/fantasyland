@@ -3,7 +3,10 @@
 const assert = require('../../assert');
 
 const chainTest = function(chain) {
-  console.log('  Applicative Tests');
+  require('../apply')
+    .test(chain);
+
+  console.log('  Chain Tests');
 
   const m = chain(2);
 
